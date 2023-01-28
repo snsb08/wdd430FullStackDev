@@ -21,8 +21,10 @@ export class MessageEditComponent {
   }
 
   onClear(){
-    const clearMessage = new Message('0', '', '', this.currentSender);
-    this.addMessageEvent.emit(clearMessage);
+    // const clearMessage = new Message('0', '', '', this.currentSender);
+    // this.addMessageEvent.emit(clearMessage);
+    this.subjectInputRef.nativeElement.value = '';
+    this.msgTextInputRef.nativeElement.value = '';
   }
 
 }
