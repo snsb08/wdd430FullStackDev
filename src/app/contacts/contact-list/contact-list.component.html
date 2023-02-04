@@ -17,7 +17,6 @@
           <cms-contact-item
             *ngFor="let contactEl of contacts"
             [contact]="contactEl"
-            (contactSelected)="onSelected(contactEl)"
           ></cms-contact-item>
           <!-- </div> -->
         </div>
@@ -40,7 +39,7 @@
     <cms-contact-item
       *ngFor="let contactEl of contacts"
       [contact]="contactEl"
-      (contactSelected)="onSelected(contactEl)"
+      (contactSelected)="onSelected(contactEl)" //this click event got deleted after adding services
     ></cms-contact-item>
 -->
 <!-- <cms-contact-list></cms-contact-list>
