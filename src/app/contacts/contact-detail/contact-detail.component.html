@@ -5,7 +5,7 @@
         <div class="row list-group main-container">
           <!-- <div class="col-xs-12 list-group-item top"> -->
           <!-- <a href="#" class="list-group-item clearfix"> -->
-          <a href="#">
+          <a style="cursor: pointer">
             <!-- *ngFor="let contact of contact"
               > -->
             <h2 class="list-group-item-heading">{{ contact.name }}</h2>
@@ -18,8 +18,12 @@
               />
             </div>
             <span class="pull-right">
-              <button class="btn btn-primary">Edit</button>
-              <button class="btn btn-danger">Delete</button>
+              <a
+                routerLink="/contacts/{{ contact.id }}/edit"
+                class="btn btn-primary"
+                >Edit</a
+              >
+              <a (click)="onDelete()" class="btn btn-danger">Delete</a>
             </span>
           </a>
           <!-- </div> -->

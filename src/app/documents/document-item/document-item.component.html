@@ -1,8 +1,9 @@
 <a
-  href="#"
+  style="cursor: pointer"
+  routerLink="/documents/{{ document.id }}"
+  routerLinkActive="active"
   class="list-group-item clearfix documentDiv"
-  (click)="onSelectedDocument()"
 >
   <!-- Display document name here -->
-  {{ document.name }}
+  <p>{{ document.name }}</p>
 </a>

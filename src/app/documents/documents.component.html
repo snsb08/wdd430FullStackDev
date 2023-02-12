@@ -5,13 +5,14 @@
   </div>
 
   <div class="col-md-4">
+    <router-outlet></router-outlet>
     <!--Add tag to load the DocumentDetailComponent here-->
-    <cms-document-detail
+    <!-- <cms-document-detail
       *ngIf="selectedDocument; else infoText"
       [document]="selectedDocument"
     ></cms-document-detail>
     <ng-template #infoText>
       <p>Please select a Document!</p>
-    </ng-template>
+    </ng-template> -->
   </div>
 </div>

@@ -15,7 +15,8 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){}
 
-  switchView(selectedFeature:string){
-    this.selectedFeature = selectedFeature;
-  }
+  //--------Deleted after adding Routes --------
+  // switchView(selectedFeature:string){
+  //   this.selectedFeature = selectedFeature;
+  // } 
 }

@@ -17,11 +17,20 @@ export class DocumentListComponent implements OnInit {
     // new Document('4', 'doc4', 'This is document #4', 'url#4', 'child4'),
     // new Document('5', 'doc5', 'This is document #5', 'url#5', 'child5')
   ];
+  documentId: string = "";
+  selectedDocument: Document;
 
   constructor(private documentService: DocumentService) {}
 
   ngOnInit() {
     this.documents = this.documentService.getDocuments();
+
+    this.documentService.documentChangedEvent
+    .subscribe(
+      (document: Document) => {
+        this.selectedDocument = document;
+      }
+    );
     
   }
 
