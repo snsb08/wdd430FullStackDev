@@ -1,20 +1,38 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {Subscription } from 'rxjs';
 
 import {Document} from '../document.model';
-// import { DocumentService } from '../document.service';
+import { DocumentService } from '../document.service';
 
 @Component({
   selector: 'cms-document-item',
   templateUrl: './document-item.component.html',
   styleUrls: ['./document-item.component.css']
 })
-export class DocumentItemComponent implements OnInit {
+export class DocumentItemComponent implements OnInit, OnDestroy {
  @Input() document: Document;
+//  @Input() document: Document[];
 
-//  constructor( private documentService: DocumentService){}
+ subscription: Subscription;
 
- ngOnInit(){}
+ constructor( private documentService: DocumentService){}
 
+ ngOnInit(){
+  // this.document = this.documentService.getDocuments();
+  // this.subscription = this.documentService.documentListChangedEvent
+  //   .subscribe(
+  //     next?: (document: Document) => {
+  //       this.documentsList = documents[];
+  //     }
+  //   );
+
+  
+
+ }
+
+ngOnDestroy(): void {
+
+ }  
 
 //  onSelectedDocument(){
 //   // this.contactSelected.emit(); //part of the output EventEmitter

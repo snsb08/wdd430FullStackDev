@@ -18,7 +18,7 @@ export class ContactItemComponent implements OnInit{
 
  onSelected(){
   // this.contactSelected.emit(); //part of the output EventEmitter
-  this.contactService.contactSelectedEvent.emit(this.contact);
+  this.contactService.contactSelectedEvent.next(this.contact);
 
  }
 

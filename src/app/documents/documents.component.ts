@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Document } from './document.model';
 import { DocumentService } from './document.service';
+// import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'cms-documents',
