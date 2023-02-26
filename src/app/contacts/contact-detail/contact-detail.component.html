@@ -31,6 +31,7 @@
       </div>
 
       <div class="panel-body">
+        <!-- <div class="col-xs-12" *ngIf="!contact.group"> -->
         <div class="col-xs-12">
           <p class="list-group-item-text">
             <strong>Email: </strong>{{ contact.email }}
@@ -39,6 +40,27 @@
             <strong>Phone: </strong> {{ contact.phone }}
           </p>
         </div>
+
+        <div class="panel-body" *ngIf="contact.group">
+          <!-- <div class="panel-body" *ngIf="groupContacts"> -->
+          <div class="form-group">
+            <label for="groupList">Group Contacts:</label>
+            <div class="row" id="groupList" style="min-height: 3rem">
+              <div *ngFor="let contact of contact.group; let i = index">
+                <!-- <div *ngFor="let contact of groupContacts; let i = index"> -->
+                <div>
+                  <cms-contact-item
+                    class="col-sm-11"
+                    [contact]="contact"
+                  ></cms-contact-item>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <p class="list-group-item-text">
+            <strong>Team:</strong> {{ contact.group }}
+          </p> -->
       </div>
     </div>
   </div>

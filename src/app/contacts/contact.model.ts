@@ -14,5 +14,6 @@ export class Contact {
     this.phone = phone;
     this.imageUrl = imageUrl;
     this.group = group;
+    
    }
 }
