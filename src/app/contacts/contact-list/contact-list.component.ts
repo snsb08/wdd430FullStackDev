@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import {Contact} from '../contact.model';
 import { ContactService } from '../contact.service';
+import { ContactsFilterPipe } from '../contacts-filter.pipe';
 
 
 @Component({
@@ -17,19 +18,33 @@ export class ContactListComponent implements OnInit{
   ];
   selectedContact: Contact [];
   subscription: Subscription;
+  term: string;
 
 
   constructor(private contactService: ContactService) {}
 
   ngOnInit(){
-    this.contacts = this.contactService.getContacts();
+    // this.contacts = this.contactService.getContacts();
 
-    this.contactService.contactChangedEvent
+    // this.contactService.contactChangedEvent
+    // .subscribe(
+    //   (contact: Contact[]) => {
+    //     this.selectedContact = contact;
+    //   }
+    // );
+    // this.contactService.getContacts();
+
+    this.subscription = this.contactService.contactListChangedEvent
     .subscribe(
-      (contact: Contact[]) => {
-        this.selectedContact = contact;
+      (contacts: Contact[]) => {
+        this.contacts= contacts;
       }
     );
+    this.contactService.getContacts();
+  }
+
+  search(value:string){
+    this.term = value;
   }
 
   // onSelected(contact: Contact){
