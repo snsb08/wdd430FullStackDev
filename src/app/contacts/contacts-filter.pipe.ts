@@ -23,6 +23,15 @@ export class ContactsFilterPipe implements PipeTransform {
     return filteredContacts;
   }
 
+ }
+
+
+
+
+
+
+
+
 
   //transform(value: any, args? : any): any
   // transform(contacts: Contact[], term: string): any {
@@ -56,4 +65,4 @@ export class ContactsFilterPipe implements PipeTransform {
 //    RETURN the new filtered array of contacts
 // END
 
-}
+

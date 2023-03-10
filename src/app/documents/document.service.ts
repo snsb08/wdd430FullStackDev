@@ -29,7 +29,7 @@ export class DocumentService {
     .subscribe((documents:Document[]) =>{
       this.documents = documents;
       this.maxDocumentId = this.getMaxId()
-      //sort the list of documents
+      //sort the list of documents by name
       this.documents.sort((a,b) => (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0)
       //emit the next document list
       //change event
